@@ -13,6 +13,26 @@
   --modal-button-bg: #188ce8;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+}
+
 .link {
   text-decoration: none;
 }
@@ -26,16 +46,13 @@
 }
 
 .visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6 IE7 */
+  clip: rect(1px 1px 1px 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
   overflow: hidden;
 }
 
@@ -46,7 +63,14 @@ body {
   letter-spacing: 0.03em;
   color: var(--primary-grey-text);
 }
+
 /* #################### Components #################### */
+.container {
+  width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
 .component-title {
   font-weight: 700;
   font-size: 36px;
@@ -85,8 +109,30 @@ body {
 /* #################### HEADER #################### */
 .header {
   background-color: var(--primary-white-bg);
+  padding: 25px 0;
+}
+
+.header .container {
+  display: flex;
 }
 /* #################### Navigation ################### */
+.header .logo {
+  margin-right: 93px;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list .item:not(:last-child) {
+  margin-right: 50px;
+}
+
 .nav-link {
   font-weight: 500;
   line-height: 1.14;
@@ -101,6 +147,16 @@ body {
 /* #################### End Navigation #################### */
 
 /* #################### Contacts #################### */
+.header-contacts {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+}
+
+.header-contacts .item:not(:last-child) {
+  margin-right: 40px;
+}
+
 .header-contacts-link {
   font-weight: 500;
   line-height: 1.14;
@@ -113,10 +169,15 @@ body {
 /* #################### MAIN #################### */
 /* #################### Hero #################### */
 .hero {
+  padding: 200px 0;
+
   background-color: var(--accent-dark-blue-bg);
+  text-align: center;
 }
 
 .title-hero {
+  margin-bottom: 20px;
+
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -127,6 +188,11 @@ body {
 }
 
 .modal-button {
+  min-width: 200px;
+  padding: 10px 32px;
+
+  border: solid 1px transparent;
+  border-radius: 4px;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
@@ -143,7 +209,21 @@ body {
 /* #################### End Hero #################### */
 
 /* #################### Features #################### */
+.features {
+  padding: 94px 0;
+}
+
+.feature-list {
+  display: flex;
+}
+
+.feature-list .item:not(:last-child) {
+  padding-right: 30px;
+}
+
 .feature-title {
+  margin-bottom: 10px;
+
   font-weight: 700;
   line-height: 1.14;
   text-transform: uppercase;
@@ -156,14 +236,53 @@ body {
 /* #################### End Features #################### */
 
 /* #################### Specialty #################### */
+.specialty {
+  padding-bottom: 94px;
+}
+
+.specialty .component-title {
+  padding-bottom: 50px;
+}
+
+.specialty-list {
+  display: flex;
+}
+
+.specialty-list .item:not(:last-child) {
+  margin-right: 30px;
+}
 /* #################### End Specialty #################### */
 
 /* #################### Team #################### */
 .team {
+  padding: 94px 0;
+
   background-color: var(--secondary-grey-bg);
 }
 
+.team .component-title {
+  padding-bottom: 50px;
+}
+
+.team-list {
+  display: flex;
+}
+
+.team-list .item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.team-list .description {
+  padding: 30px 0;
+
+  text-align: center;
+  background-color: var(--primary-white-bg);
+}
+
 .team-member {
+  padding-bottom: 10px;
+  border-radius: 0px 0px 4px 4px;
+
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
@@ -179,12 +298,21 @@ body {
 
 /* #################### FOOTER #################### */
 .footer {
+  padding: 60px 0;
+
   background-color: var(--accent-dark-blue-bg);
 }
 
 .geolocation {
+  margin-top: 20px;
+  margin-bottom: 9px;
+
   line-height: 1.71;
   color: var(--title-white);
+}
+
+.address-list .item:not(:last-child) {
+  margin-bottom: 9px;
 }
 
 .address-link {
