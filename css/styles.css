@@ -160,7 +160,7 @@ body {
 }
 
 .header-contacts .item:not(:last-child) {
-  margin-right: 40px;
+  margin-right: 50px;
 }
 
 .header-contacts-link {
